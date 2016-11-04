@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">e582e53f-1e86-4cf8-a42c-7c4e6ca62e66</string>
     <string name="app_name">SonomaDemoApp</string>
 </resources>

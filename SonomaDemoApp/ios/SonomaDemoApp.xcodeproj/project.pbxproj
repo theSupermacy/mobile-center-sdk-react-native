@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SonomaDemoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SonomaDemoAppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -16,6 +15,8 @@
 		CB4D6D981DBA90910080D9D6 /* SonomaCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D6D971DBA90910080D9D6 /* SonomaCrashes.framework */; };
 		CB4D6DA91DBAC6BA0080D9D6 /* Sonoma-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4D6DA81DBAC6BA0080D9D6 /* Sonoma-Config.plist */; };
 		CBE4F703E802221835DA932C /* libPods-SonomaDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD76368D159A897B63515643 /* libPods-SonomaDemoApp.a */; };
+		B8C778AD47274EDBA79E1066 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFA008784F5477F9F96CD4B /* libCodePush.a */; };
+		8DDE7C45C96642BFB2AF1DBD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A81D606FA4894A2B81FAC5A9 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,9 @@
 		CB4D6D971DBA90910080D9D6 /* SonomaCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SonomaCrashes.framework; path = "../../Sonoma-SDK-iOS/Products/SonomaCrashes/SonomaCrashes.framework"; sourceTree = "<group>"; };
 		CB4D6DA81DBAC6BA0080D9D6 /* Sonoma-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Sonoma-Config.plist"; path = "SonomaDemoApp/Sonoma-Config.plist"; sourceTree = "<group>"; };
 		D242D6C23BA93EED289A0AF3 /* Pods-SonomaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonomaDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SonomaDemoApp/Pods-SonomaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		B2B979931895486C8E1FF269 /* CodePush.xcodeproj */ = {isa = PBXFileReference; name = "CodePush.xcodeproj"; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		CDFA008784F5477F9F96CD4B /* libCodePush.a */ = {isa = PBXFileReference; name = "libCodePush.a"; path = "libCodePush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A81D606FA4894A2B81FAC5A9 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				CB4D6D981DBA90910080D9D6 /* SonomaCrashes.framework in Frameworks */,
 				CB4D6D961DBA90820080D9D6 /* SonomaCore.framework in Frameworks */,
 				CBE4F703E802221835DA932C /* libPods-SonomaDemoApp.a in Frameworks */,
+				B8C778AD47274EDBA79E1066 /* libCodePush.a in Frameworks */,
+				8DDE7C45C96642BFB2AF1DBD /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B2B979931895486C8E1FF269 /* CodePush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				BD76368D159A897B63515643 /* libPods-SonomaDemoApp.a */,
+				A81D606FA4894A2B81FAC5A9 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,7 +220,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -376,6 +384,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SonomaDemoApp.app/SonomaDemoApp";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -389,6 +401,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SonomaDemoApp.app/SonomaDemoApp";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};
@@ -409,6 +425,7 @@
 					"$(SRCROOT)/../../../ios/RNSonoma/**",
 					"$(SRCROOT)/../../../ios/RNSonomaCrashes/**",
 					"$(SRCROOT)/../../../ios/RNSonomaAnalytics/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 				INFOPLIST_FILE = SonomaDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -437,6 +454,7 @@
 					"$(SRCROOT)/../../../ios/RNSonoma/**",
 					"$(SRCROOT)/../../../ios/RNSonomaCrashes/**",
 					"$(SRCROOT)/../../../ios/RNSonomaAnalytics/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 				INFOPLIST_FILE = SonomaDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -487,6 +505,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -527,6 +546,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
